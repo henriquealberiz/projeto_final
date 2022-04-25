@@ -10,15 +10,22 @@ create table usuario (
     idusuario int  auto_increment primary key,
     nome varchar(50),
     login varchar(20) unique,
+    email varchar(50),
     senha varchar(50),
-    perfil enum('adm', 'user')
+    perfil enum('adm', 'user'),
+    cep int(20),
+    rua varchar(50),
+    bairro varchar(50),
+    cidade varchar(20),
+    estado varchar(20),
+    ibge int (30)
 );
 
 $post nome;
 $senha 
 #inserir dado na tabela
 
-$sql = "insert into usuario value(null,'Henrique','admin','123','adm');";
+$sql = "insert into usuario value(null,'Henrique','admin','henriqueAemail.com','123','adm','25525480','Rua B','Pavuna','Rio de Janeiro','RJ','3304557');";
 
 if($con,$sql){
     foi
@@ -27,9 +34,8 @@ if($con,$sql){
     erro
 }
 
-insert into usuario value(null,'Marcia','marcia','123','user');
-insert into usuario value(null,'Hernandes','hernandes','123','user');
-insert into usuario value(null,'Hanilo','danilo','123','user');
+insert into usuario value(null,'Marcia','marcia','marcia@email.com','123','user','21520490','Rua Paschoal José Granado','Pavuna','Rio de Janeiro','RJ','3304557');
+
 select * from usuario;
 
 
